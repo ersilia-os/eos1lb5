@@ -7,41 +7,30 @@ Description: Compendium of models to predict the likelihood that a molecule ente
   Sarathy et al, 2016) and finally permeates through the bacterial cell wall (from
   Janardhan et al, 2016, Radchenko et al, 2023, Lepori et al 2025). The models are
   classifiers built based on the referenced data, using author-informed cut-offs for
-  permeation. This model complements MycPermCheck (eos8d8a) .
+  permeation. This model complements MycPermCheck (eos8d8a).
 Deployment:
 - Local
-- Online
-Source: Local, Online
-Source Type: Internal, Replicated, External
-Task: Annotation, Representation, Sampling
-Subtask: Property calculation or prediction, Activity prediction, Featurization, Projection,
-  Similarity search, Generation
+Source: Local
+Source Type: Internal
+Task: Annotation
+Subtask: Activity prediction
 Input:
 - Compound
 Input Dimension: 1
 Output:
-- Value
 - Score
-- Compound
-- Probability
-- Experimental value
-- '...'
-Output Dimension: 1
-Output Consistency: Fixed, Variable
-Interpretation: 'The output of this template model should be interpreted like this.
-
-  '
+Output Dimension: 6
+Output Consistency: Fixed
+Interpretation: 'Probability of lung diffusion and cell wall penetration.'
 Tag:
 - Tuberculosis
 - Permeability
 - ADME
 Biomedical Area:
-- Biomedical Area 1
-- Biomedical Area 2
+- Tuberculosis
 Target Organism:
-- Target Organism 1
-- Target Organism 2
-Publication Type: Peer reviewed, Preprint, Other
+- Mycobacterium tuberculosis
+Publication Type: Peer reviewed
 Publication Year: 2025
 Publication: https://pubmed.ncbi.nlm.nih.gov/27626295/
 Source Code: https://github.com/ersilia-os/ai2050-mtb-penetration

@@ -1,1 +1,7 @@
 name,type,direction,description
+epr_proba,float,high,Probability of the compound to accumulate in the epithelial lining fluid
+diff_proba,float,high,Probability of the compound to diffuse on caseum lesions
+perm_proba_janardhan,float,high,Probability of the compound to penetrate the cell wall according to the dataset from Janardhan et al 2016
+perm_proba_mtbpen,float,high,Probability of the compound to penetrate the cell wall according to the MtbPen dataset
+perm_proba_lepori_mtb,float,high,Probability of the compound to penetrate the cell wall in Mtb according to the dataset from Lepori et al 2025
+perm_proba_lepori_msm,float,high,Probability of the compound to penetrate the cell wall in Msm according to the dataset from Lepori et al 2025

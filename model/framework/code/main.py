@@ -1,9 +1,7 @@
-# imports
 import os
 import csv
 import sys
-from rdkit import Chem
-from rdkit.Chem.Descriptors import MolWt
+from lazyqsar.qsar import LazyBinaryQSAR
 
 # parse arguments
 input_file = sys.argv[1]
@@ -12,10 +10,9 @@ output_file = sys.argv[2]
 # current file directory
 root = os.path.dirname(os.path.abspath(__file__))
 
-# my model
-def my_model(smiles_list):
-    return [MolWt(Chem.MolFromSmiles(smi)) for smi in smiles_list]
+MODELPATH = os.path.join(root, "..", "..", "checkpoints")
 
+models = ["valitalo2016", "sarathy2016", "janardhan2016", "radchenko2023", "lepori2025_mtb", "lepori2025_msm"]
 
 # read SMILES from .csv file, assuming one column with header
 with open(input_file, "r") as f:
@@ -24,16 +21,18 @@ with open(input_file, "r") as f:
     smiles_list = [r[0] for r in reader]
 
 # run model
-outputs = my_model(smiles_list)
+y_preds = {}
+for m in models:
+    model_folder = os.path.join(MODELPATH, f"{m}")
+    model = LazyBinaryQSAR.load(f"{model_folder}")
+    y_pred = model.predict_proba(smiles_list=smiles_list)[:, 1]
+    y_preds[m]=y_pred
 
-#check input and output have the same lenght
-input_len = len(smiles_list)
-output_len = len(outputs)
-assert input_len == output_len
+header = list(y_preds.keys())
 
 # write output in a .csv file
 with open(output_file, "w") as f:
     writer = csv.writer(f)
-    writer.writerow(["value"])  # header
-    for o in outputs:
-        writer.writerow([o])
+    writer.writerow(["epr_proba", "diff_proba", "perm_proba_janardhan", "perm_proba_mtbpen", "perm_proba_lepori_mtb", "perm_proba_lepori_msm"]) 
+    for o1, o2, o3, o4,o5,o6 in zip(*(y_preds[m].tolist() for m in header)):
+        writer.writerow([o1, o2, o3, o4,o5,o6])
