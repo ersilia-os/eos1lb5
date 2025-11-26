@@ -2,36 +2,38 @@ Identifier: eos1lb5
 Slug: mycobacterium-permeability
 Status: In progress
 Title: Mycobacterium cell wall penetration
-Description: Compendium of models to predict the likelihood that a molecule enters
-  the lungs (from Valitalo et al, 2016), diffuses through the caseum lesions (from
-  Sarathy et al, 2016) and finally permeates through the bacterial cell wall (from
-  Janardhan et al, 2016, Radchenko et al, 2023, Lepori et al 2025). The models are
-  classifiers built based on the referenced data, using author-informed cut-offs for
-  permeation. This model complements MycPermCheck (eos8d8a).
+Description: Compendium of models to predict the likelihood that a molecule 
+  enters the lungs (from Valitalo et al, 2016), diffuses through the caseum 
+  lesions (from Sarathy et al, 2016) and finally permeates through the bacterial
+  cell wall (from Janardhan et al, 2016, Radchenko et al, 2023, Lepori et al 
+  2025). The models are classifiers built based on the referenced data, using 
+  author-informed cut-offs for permeation. This model complements MycPermCheck 
+  (eos8d8a).
 Deployment:
-- Local
+  - Local
 Source: Local
 Source Type: Internal
 Task: Annotation
 Subtask: Activity prediction
 Input:
-- Compound
+  - Compound
 Input Dimension: 1
 Output:
-- Score
+  - Score
 Output Dimension: 6
 Output Consistency: Fixed
-Interpretation: 'Probability of lung diffusion and cell wall penetration.'
+Interpretation: Probability of lung diffusion and cell wall penetration.
 Tag:
-- Tuberculosis
-- Permeability
-- ADME
+  - Tuberculosis
+  - Permeability
+  - ADME
 Biomedical Area:
-- Tuberculosis
+  - Tuberculosis
 Target Organism:
-- Mycobacterium tuberculosis
+  - Mycobacterium tuberculosis
 Publication Type: Peer reviewed
 Publication Year: 2025
 Publication: https://pubmed.ncbi.nlm.nih.gov/27626295/
 Source Code: https://github.com/ersilia-os/ai2050-mtb-penetration
 License: GPL-3.0-or-later
+Incorporation Date: '2025-11-25'
