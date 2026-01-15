@@ -1,6 +1,8 @@
 import os
 import csv
 import sys
+import json
+import numpy as np
 from lazyqsar.qsar import LazyBinaryQSAR
 
 # parse arguments
@@ -20,6 +22,7 @@ with open(input_file, "r") as f:
     next(reader)  # skip header
     smiles_list = [r[0] for r in reader]
 
+
 # run model
 y_preds = {}
 for m in models:
@@ -27,7 +30,6 @@ for m in models:
     model = LazyBinaryQSAR.load(f"{model_folder}")
     y_pred = model.predict_proba(smiles_list=smiles_list)[:, 1]
     y_preds[m]=y_pred
-
 header = list(y_preds.keys())
 
 # write output in a .csv file
@@ -36,3 +38,7 @@ with open(output_file, "w") as f:
     writer.writerow(["epr_proba", "diff_proba", "perm_proba_janardhan", "perm_proba_mtbpen", "perm_proba_lepori_mtb", "perm_proba_lepori_msm"]) 
     for o1, o2, o3, o4,o5,o6 in zip(*(y_preds[m].tolist() for m in header)):
         writer.writerow([o1, o2, o3, o4,o5,o6])
+
+
+
+
