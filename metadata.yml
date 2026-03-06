@@ -37,18 +37,16 @@ Publication: https://pubmed.ncbi.nlm.nih.gov/27626295/
 Source Code: https://github.com/ersilia-os/ai2050-mtb-penetration
 License: GPL-3.0-or-later
 Incorporation Date: '2025-11-25'
-Last Packaging Date: '2026-01-15'
+Last Packaging Date: '2026-03-06'
 Release: v1.0.0
 S3: https://ersilia-models-zipped.s3.eu-central-1.amazonaws.com/eos1lb5.zip
 DockerHub: https://hub.docker.com/r/ersiliaos/eos1lb5
-Docker Architecture:
-  - AMD64
-  - ARM64
+Docker Architecture: AMD64
 Model Size: 12.0
 Environment Size: 1976.0
-Image Size: 1028.14
-Computational Performance 1: 256.29
-Computational Performance 2: 187.18
-Computational Performance 3: 179.15
-Computational Performance 4: 640.09
-Computational Performance 5: -1.0
+Image Size: 1083.02
+Computational Performance 1: 112.55
+Computational Performance 2: 204.12
+Computational Performance 3: 146.42
+Computational Performance 4: 317.08
+Computational Performance 5: 909.9
