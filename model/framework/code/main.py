@@ -1,9 +1,9 @@
 import os
 import csv
 import sys
-import json
-import numpy as np
-from lazyqsar.qsar import LazyBinaryQSAR
+import pandas as pd
+
+from lazyqsar.api.binary_qsar_predict import predict, prepare_files, read_output_array
 
 # parse arguments
 input_file = sys.argv[1]
@@ -22,23 +22,22 @@ with open(input_file, "r") as f:
     next(reader)  # skip header
     smiles_list = [r[0] for r in reader]
 
+# create files for lazyqsar api
+files = prepare_files(smiles_list, models)
 
-# run model
-y_preds = {}
-for m in models:
-    model_folder = os.path.join(MODELPATH, f"{m}")
-    model = LazyBinaryQSAR.load(f"{model_folder}")
-    y_pred = model.predict_proba(smiles_list=smiles_list)[:, 1]
-    y_preds[m]=y_pred
-header = list(y_preds.keys())
+# run predictions
+predict(MODELPATH, files["input_csv"], files["output_csv"], files["models_txt"])
+
+# read predictions from output_csv
+R = read_output_array(files["output_csv"])
 
 # write output in a .csv file
-with open(output_file, "w") as f:
-    writer = csv.writer(f)
-    writer.writerow(["epr_proba", "diff_proba", "perm_proba_janardhan", "perm_proba_mtbpen", "perm_proba_lepori_mtb", "perm_proba_lepori_msm"]) 
-    for o1, o2, o3, o4,o5,o6 in zip(*(y_preds[m].tolist() for m in header)):
-        writer.writerow([o1, o2, o3, o4,o5,o6])
+df = pd.DataFrame(R, columns = ["epr_proba", "diff_proba", "perm_proba_janardhan", "perm_proba_mtbpen", "perm_proba_lepori_mtb", "perm_proba_lepori_msm"])
 
+# write output in a .csv file
+df.to_csv(output_file, index=False)
 
-
-
+# removing temporary files
+os.remove(files["input_csv"])
+os.remove(files["output_csv"])
+os.remove(files["models_txt"])
