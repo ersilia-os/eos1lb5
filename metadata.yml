@@ -38,7 +38,7 @@ Source Code: https://github.com/ersilia-os/ai2050-mtb-penetration
 License: GPL-3.0-or-later
 Incorporation Date: '2025-11-25'
 Last Packaging Date: '2026-03-26'
-Release: v2.0.0
+Release: v2.0.1
 S3: https://ersilia-models-zipped.s3.eu-central-1.amazonaws.com/eos1lb5.zip
 DockerHub: https://hub.docker.com/r/ersiliaos/eos1lb5
 Docker Architecture: AMD64
