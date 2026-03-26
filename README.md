@@ -2,7 +2,7 @@
 
 Compendium of models to predict the likelihood that a molecule enters the lungs (from Valitalo et al, 2016), diffuses through the caseum lesions (from Sarathy et al, 2016) and finally permeates through the bacterial cell wall (from Janardhan et al, 2016, Radchenko et al, 2023, Lepori et al 2025). The models are classifiers built based on the referenced data, using author-informed cut-offs for permeation. This model complements MycPermCheck (eos8d8a).
 
-This model was incorporated on 2025-11-25.Last packaged on 2026-03-06.
+This model was incorporated on 2025-11-25.Last packaged on 2026-03-26.
 
 ## Information
 ### Identifiers
@@ -46,12 +46,12 @@ Below are the **Output Columns** of the model:
 ### Resource Consumption
 - **Model Size (Mb):** `12`
 - **Environment Size (Mb):** `1977`
-- **Image Size (Mb):** `1083.02`
+- **Image Size (Mb):** `1083.07`
 
 **Computational Performance (seconds):**
-- 10 inputs: `112.55`
-- 100 inputs: `146.42`
-- 10000 inputs: `909.9`
+- 10 inputs: `166.64`
+- 100 inputs: `83.24`
+- 10000 inputs: `932.56`
 
 ### References
 - **Source Code**: [https://github.com/ersilia-os/ai2050-mtb-penetration](https://github.com/ersilia-os/ai2050-mtb-penetration)
