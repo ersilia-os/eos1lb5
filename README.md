@@ -55,7 +55,7 @@ Below are the **Output Columns** of the model:
 
 ### References
 - **Source Code**: [https://github.com/ersilia-os/ai2050-mtb-penetration](https://github.com/ersilia-os/ai2050-mtb-penetration)
-- **Publication**: [https://pubmed.ncbi.nlm.nih.gov/27626295/](https://pubmed.ncbi.nlm.nih.gov/27626295/)
+- **Publication**: [https://doi.org/10.1021/acsinfecdis.6b00051](https://doi.org/10.1021/acsinfecdis.6b00051)
 - **Publication Type:** `Peer reviewed`
 - **Publication Year:** `2025`
 - **Ersilia Contributor:** [GemmaTuron](https://github.com/GemmaTuron)
