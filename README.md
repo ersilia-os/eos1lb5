@@ -14,7 +14,7 @@ This model was incorporated on 2025-11-25.Last packaged on 2026-03-30.
 - **Subtask:** `Activity prediction`
 - **Biomedical Area:** `Tuberculosis`
 - **Target Organism:** `Mycobacterium tuberculosis`
-- **Tags:** `Tuberculosis`, `Permeability`, `ADME`
+- **Tags:** `Antimicrobial activity`, `Permeability`, `ADME`
 
 ### Input
 - **Input:** `Compound`
