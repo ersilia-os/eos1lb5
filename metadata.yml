@@ -1,6 +1,6 @@
 Identifier: eos1lb5
 Slug: mycobacterium-permeability
-Status: In maintenance
+Status: Ready
 Title: Mycobacterium cell wall penetration
 Description: Compendium of models to predict the likelihood that a molecule 
   enters the lungs (from Valitalo et al, 2016), diffuses through the caseum 
@@ -38,16 +38,18 @@ Source Code: https://github.com/ersilia-os/ai2050-mtb-penetration
 License: GPL-3.0-or-later
 Contributor: GemmaTuron
 Incorporation Date: '2025-11-25'
-Last Packaging Date: '2026-03-30'
+Last Packaging Date: '2026-08-07'
 Release: v2.1.0
 S3: https://ersilia-models-zipped.s3.eu-central-1.amazonaws.com/eos1lb5.zip
 DockerHub: https://hub.docker.com/r/ersiliaos/eos1lb5
-Docker Architecture: AMD64
+Docker Architecture:
+  - AMD64
+  - ARM64
 Model Size: 12.0
 Environment Size: 5841.0
-Image Size: 2008.59
-Computational Performance 1: 59.05
-Computational Performance 2: 49.16
-Computational Performance 3: 57.15
-Computational Performance 4: 193.7
-Computational Performance 5: 787.35
+Image Size: 5785.7
+Computational Performance 1: 192.98
+Computational Performance 2: 192.19
+Computational Performance 3: 109.59
+Computational Performance 4: 339.67
+Computational Performance 5: 948.27
