@@ -1,6 +1,6 @@
 # Mycobacterium cell wall penetration
 
-Compendium of models to predict the likelihood that a molecule enters the lungs (from Valitalo et al, 2016), diffuses through the caseum lesions (from Sarathy et al, 2016) and finally permeates through the bacterial cell wall (from Janardhan et al, 2016, Radchenko et al, 2023, Lepori et al 2025). The models are classifiers built based on the referenced data, using author-informed cut-offs for permeation. This model complements MycPermCheck (eos8d8a).
+Estimates how far a compound penetrates the necrotic and cellular compartments of tuberculosis lesions, where bacilli survive out of reach of many drugs. Sarathy and colleagues measured partitioning of antitubercular agents into caseum and cellular lesion material in infected rabbits, then related it to physicochemical character, finding that lipophilicity and plasma protein binding largely govern caseum access. Six lesion compartments are scored separately. Measurements derive from an animal model, so absolute values transfer to human disease only approximately.
 
 This model was incorporated on 2025-11-25.Last packaged on 2026-08-07.
 
@@ -23,7 +23,7 @@ This model was incorporated on 2025-11-25.Last packaged on 2026-08-07.
 ### Output
 - **Output Dimension:** `6`
 - **Output Consistency:** `Fixed`
-- **Interpretation:** Probability of lung diffusion and cell wall penetration.
+- **Interpretation:** Predicted penetration of the compound into six tuberculosis lesion compartments.
 
 Below are the **Output Columns** of the model:
 | Name | Type | Direction | Description |
