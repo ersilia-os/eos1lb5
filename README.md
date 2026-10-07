@@ -1,6 +1,6 @@
 # Mycobacterium cell wall penetration
 
-Estimates how far a compound penetrates the necrotic and cellular compartments of tuberculosis lesions, where bacilli survive out of reach of many drugs. Sarathy and colleagues measured partitioning of antitubercular agents into caseum and cellular lesion material in infected rabbits, then related it to physicochemical character, finding that lipophilicity and plasma protein binding largely govern caseum access. Six lesion compartments are scored separately. Measurements derive from an animal model, so absolute values transfer to human disease only approximately.
+Scores how far a compound travels along the route to Mycobacterium tuberculosis, which shelters in necrotic lung lesions beyond the reach of many drugs. Ersilia assembled six LazyQSAR classifiers from published data covering entry into lung epithelial lining fluid (56 clinically measured drugs), diffusion into caseum (279 compounds in a binding assay) and cell wall permeation from inferred activity data, the 5,371-compound MtbPen set and a click-chemistry screen in both M. tuberculosis and M. smegmatis. Each uses the cut-off its own authors defined, so the six scores share no common scale.
 
 This model was incorporated on 2025-11-25.Last packaged on 2026-08-07.
 
@@ -23,7 +23,7 @@ This model was incorporated on 2025-11-25.Last packaged on 2026-08-07.
 ### Output
 - **Output Dimension:** `6`
 - **Output Consistency:** `Fixed`
-- **Interpretation:** Predicted penetration of the compound into six tuberculosis lesion compartments.
+- **Interpretation:** Probabilities from six classifiers covering lung fluid entry, caseum diffusion and mycobacterial cell wall permeation across four datasets.
 
 Below are the **Output Columns** of the model:
 | Name | Type | Direction | Description |
