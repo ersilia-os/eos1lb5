@@ -1,43 +1,34 @@
 import os
-import csv
 import sys
-import pandas as pd
 
-from lazyqsar.api.binary_qsar_predict import predict, prepare_files, read_output_array
+from ersilia_pack_utils.core import read_smiles, write_out
+from lazyqsar.api.classifier_predict import predict
 
-# parse arguments
 input_file = sys.argv[1]
 output_file = sys.argv[2]
 
-# current file directory
 root = os.path.dirname(os.path.abspath(__file__))
+checkpoints = os.path.abspath(os.path.join(root, "..", "..", "checkpoints"))
 
-MODELPATH = os.path.join(root, "..", "..", "checkpoints")
+MODELS = {
+    "epr_rank": "valitalo2016",
+    "diff_rank": "sarathy2016",
+    "perm_rank_janardhan": "janardhan2016",
+    "perm_rank_mtbpen": "radchenko2023",
+    "perm_rank_lepori_mtb": "lepori2025_mtb",
+    "perm_rank_lepori_msm": "lepori2025_msm",
+}
 
-models = ["valitalo2016", "sarathy2016", "janardhan2016", "radchenko2023", "lepori2025_mtb", "lepori2025_msm"]
+_, smiles_list = read_smiles(input_file)
 
-# read SMILES from .csv file, assuming one column with header
-with open(input_file, "r") as f:
-    reader = csv.reader(f)
-    next(reader)  # skip header
-    smiles_list = [r[0] for r in reader]
+outputs, header = predict(
+    {name: os.path.join(checkpoints, folder) for name, folder in MODELS.items()},
+    smiles=smiles_list,
+    predict_type="rank",
+)
 
-# create files for lazyqsar api
-files = prepare_files(smiles_list, models)
+# Ersilia reports missing values as empty cells; csv.writer would otherwise
+# render an unparseable SMILES as the string "nan".
+outputs = [["" if v is None or v != v else v for v in row] for row in outputs]
 
-# run predictions
-predict(MODELPATH, files["input_csv"], files["output_csv"], files["models_txt"])
-
-# read predictions from output_csv
-R = read_output_array(files["output_csv"])
-
-# write output in a .csv file
-df = pd.DataFrame(R, columns = ["epr_proba", "diff_proba", "perm_proba_janardhan", "perm_proba_mtbpen", "perm_proba_lepori_mtb", "perm_proba_lepori_msm"])
-
-# write output in a .csv file
-df.to_csv(output_file, index=False)
-
-# removing temporary files
-os.remove(files["input_csv"])
-os.remove(files["output_csv"])
-os.remove(files["models_txt"])
+write_out(outputs, header, output_file)

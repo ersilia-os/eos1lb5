@@ -1,6 +1,6 @@
 # Mycobacterium cell wall penetration
 
-Scores how far a compound travels along the route to Mycobacterium tuberculosis, which shelters in necrotic lung lesions beyond the reach of many drugs. Ersilia assembled six LazyQSAR classifiers from published data covering entry into lung epithelial lining fluid (56 clinically measured drugs), diffusion into caseum (279 compounds in a binding assay) and cell wall permeation from inferred activity data, the 5,371-compound MtbPen set and a click-chemistry screen in both M. tuberculosis and M. smegmatis. Each uses the cut-off its own authors defined, so the six scores share no common scale.
+Scores how far a compound travels along the route to Mycobacterium tuberculosis, which shelters in necrotic lung lesions beyond the reach of many drugs. Ersilia assembled six LazyQSAR classifiers from published data covering entry into lung epithelial lining fluid (70 clinically measured drugs), diffusion into caseum (280 compounds in a binding assay) and cell wall permeation from inferred activity data, the 5,371-compound MtbPen set and a click-chemistry screen in both M. tuberculosis and M. smegmatis. Each uses the cut-off its own authors defined, so the six scores share no common scale.
 
 This model was incorporated on 2025-11-25.Last packaged on 2026-08-07.
 
@@ -23,17 +23,17 @@ This model was incorporated on 2025-11-25.Last packaged on 2026-08-07.
 ### Output
 - **Output Dimension:** `6`
 - **Output Consistency:** `Fixed`
-- **Interpretation:** Probabilities from six classifiers covering lung fluid entry, caseum diffusion and mycobacterial cell wall permeation across four datasets.
+- **Interpretation:** Six rank scores calibrated against the Ersilia reference library of 50K compounds, where 0.65 beats 99% of it. They cover lung fluid entry, caseum diffusion and mycobacterial cell wall permeation across four datasets. Each keeps the cut-off its own authors defined, so the six are not comparable with each other.
 
 Below are the **Output Columns** of the model:
 | Name | Type | Direction | Description |
 |------|------|-----------|-------------|
-| epr_proba | float | high | Probability of the compound to accumulate in the epithelial lining fluid |
-| diff_proba | float | high | Probability of the compound to diffuse on caseum lesions |
-| perm_proba_janardhan | float | high | Probability of the compound to penetrate the cell wall according to the dataset from Janardhan et al 2016 |
-| perm_proba_mtbpen | float | high | Probability of the compound to penetrate the cell wall according to the MtbPen dataset |
-| perm_proba_lepori_mtb | float | high | Probability of the compound to penetrate the cell wall in Mtb according to the dataset from Lepori et al 2025 |
-| perm_proba_lepori_msm | float | high | Probability of the compound to penetrate the cell wall in Msm according to the dataset from Lepori et al 2025 |
+| epr_rank | float | high | Rank score of how likely the compound is to accumulate in the lung epithelial lining fluid according to the dataset from Valitalo et al 2016. Calibrated against 50K compounds from the Ersilia reference library so that a score of 0.65 is better than 99% of them. Recommended threshold: 0.65. |
+| diff_rank | float | high | Rank score of how likely the compound is to diffuse into caseum lesions according to the binding assay from Sarathy et al 2016. Calibrated against 50K compounds from the Ersilia reference library so that a score of 0.65 is better than 99% of them. Recommended threshold: 0.65. |
+| perm_rank_janardhan | float | high | Rank score of how likely the compound is to penetrate the mycobacterial cell wall according to the dataset from Janardhan et al 2016. Calibrated against 50K compounds from the Ersilia reference library so that a score of 0.65 is better than 99% of them. Recommended threshold: 0.65. |
+| perm_rank_mtbpen | float | high | Rank score of how likely the compound is to penetrate the mycobacterial cell wall according to the MtbPen dataset from Radchenko et al 2023. Calibrated against 50K compounds from the Ersilia reference library so that a score of 0.65 is better than 99% of them. Recommended threshold: 0.65. |
+| perm_rank_lepori_mtb | float | high | Rank score of how likely the compound is to accumulate in Mycobacterium tuberculosis above what its chemical reactivity alone would explain according to the click-chemistry screen from Lepori et al 2025. Calibrated against 50K compounds from the Ersilia reference library so that a score of 0.65 is better than 99% of them. Recommended threshold: 0.65. |
+| perm_rank_lepori_msm | float | high | Rank score of how likely the compound is to accumulate in Mycobacterium smegmatis above what its chemical reactivity alone would explain according to the click-chemistry screen from Lepori et al 2025. Calibrated against 50K compounds from the Ersilia reference library so that a score of 0.65 is better than 99% of them. Recommended threshold: 0.65. |
 
 
 ### Source and Deployment
