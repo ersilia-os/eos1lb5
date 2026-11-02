@@ -24,7 +24,7 @@ Last packaged on 2026-08-07.
 ### Output
 - **Output Dimension:** `6`
 - **Output Consistency:** `Fixed`
-- **Interpretation:** Six rank scores calibrated against the Ersilia reference library of 50K compounds, where 0.65 beats 99% of it. They cover lung fluid entry, caseum diffusion and mycobacterial cell wall permeation across four datasets. Each keeps its authors' cut-off, so the scores are not comparable.
+- **Interpretation:** Six rank scores calibrated against the Ersilia reference library of 50K compounds, where 0.65 beats 99% of it. They cover lung fluid entry, caseum diffusion and mycobacterial cell wall permeation across four datasets. Each keeps its authors cut-off, so the scores are not comparable.
 
 Below are the **Output Columns** of the model:
 | Name | Type | Direction | Description |
@@ -45,8 +45,8 @@ Below are the **Output Columns** of the model:
 - **S3 Storage**: [https://ersilia-models-zipped.s3.eu-central-1.amazonaws.com/eos1lb5.zip](https://ersilia-models-zipped.s3.eu-central-1.amazonaws.com/eos1lb5.zip)
 
 ### Resource Consumption
-- **Model Size (Mb):** `12`
-- **Environment Size (Mb):** `5841`
+- **Model Size (Mb):** `80`
+- **Environment Size (Mb):** `7467`
 - **Image Size (Mb):** `5785.7`
 
 **Computational Performance (seconds):**
