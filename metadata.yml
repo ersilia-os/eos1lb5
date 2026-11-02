@@ -25,8 +25,8 @@ Output Dimension: 6
 Output Consistency: Fixed
 Interpretation: Six rank scores calibrated against the Ersilia reference library of
   50K compounds, where 0.65 beats 99% of it. They cover lung fluid entry, caseum diffusion
-  and mycobacterial cell wall permeation across four datasets. Each keeps the cut-off
-  its own authors defined, so the six are not comparable with each other.
+  and mycobacterial cell wall permeation across four datasets. Each keeps its authors'
+  cut-off, so the scores are not comparable.
 Tag:
   - Antimicrobial activity
   - Permeability

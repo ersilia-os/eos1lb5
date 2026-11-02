@@ -23,7 +23,7 @@ This model was incorporated on 2025-11-25.Last packaged on 2026-08-07.
 ### Output
 - **Output Dimension:** `6`
 - **Output Consistency:** `Fixed`
-- **Interpretation:** Six rank scores calibrated against the Ersilia reference library of 50K compounds, where 0.65 beats 99% of it. They cover lung fluid entry, caseum diffusion and mycobacterial cell wall permeation across four datasets. Each keeps the cut-off its own authors defined, so the six are not comparable with each other.
+- **Interpretation:** Six rank scores calibrated against the Ersilia reference library of 50K compounds, where 0.65 beats 99% of it. They cover lung fluid entry, caseum diffusion and mycobacterial cell wall permeation across four datasets. Each keeps its authors' cut-off, so the scores are not comparable.
 
 Below are the **Output Columns** of the model:
 | Name | Type | Direction | Description |
