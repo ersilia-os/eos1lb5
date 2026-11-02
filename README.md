@@ -2,7 +2,8 @@
 
 Scores how far a compound travels along the route to Mycobacterium tuberculosis, which shelters in necrotic lung lesions beyond the reach of many drugs. Ersilia assembled six LazyQSAR classifiers from published data covering entry into lung epithelial lining fluid (70 clinically measured drugs), diffusion into caseum (280 compounds in a binding assay) and cell wall permeation from inferred activity data, the 5,371-compound MtbPen set and a click-chemistry screen in both M. tuberculosis and M. smegmatis. Each uses the cut-off its own authors defined, so the six scores share no common scale.
 
-This model was incorporated on 2025-11-25.Last packaged on 2026-08-07.
+This model was incorporated on 2025-11-25.
+Last packaged on 2026-08-07.
 
 ## Information
 ### Identifiers
