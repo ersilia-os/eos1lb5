@@ -3,7 +3,7 @@
 Scores how far a compound travels along the route to Mycobacterium tuberculosis, which shelters in necrotic lung lesions beyond the reach of many drugs. Ersilia assembled six LazyQSAR classifiers from published data covering entry into lung epithelial lining fluid (70 clinically measured drugs), diffusion into caseum (280 compounds in a binding assay) and cell wall permeation from inferred activity data, the 5,371-compound MtbPen set and a click-chemistry screen in both M. tuberculosis and M. smegmatis. Each uses the cut-off its own authors defined, so the six scores share no common scale.
 
 This model was incorporated on 2025-11-25.
-Last packaged on 2026-08-07.
+Last packaged on 2026-11-05.
 
 ## Information
 ### Identifiers
@@ -41,18 +41,18 @@ Below are the **Output Columns** of the model:
 - **Source:** `Local`
 - **Source Type:** `Internal`
 - **DockerHub**: [https://hub.docker.com/r/ersiliaos/eos1lb5](https://hub.docker.com/r/ersiliaos/eos1lb5)
-- **Docker Architecture:** `AMD64`, `ARM64`
+- **Docker Architecture:** `AMD64`
 - **S3 Storage**: [https://ersilia-models-zipped.s3.eu-central-1.amazonaws.com/eos1lb5.zip](https://ersilia-models-zipped.s3.eu-central-1.amazonaws.com/eos1lb5.zip)
 
 ### Resource Consumption
 - **Model Size (Mb):** `80`
 - **Environment Size (Mb):** `7467`
-- **Image Size (Mb):** `5785.7`
+- **Image Size (Mb):** `3837.8`
 
 **Computational Performance (seconds):**
-- 10 inputs: `192.98`
-- 100 inputs: `109.59`
-- 10000 inputs: `948.27`
+- 10 inputs: `47.63`
+- 100 inputs: `1297.5`
+- 10000 inputs: `-1`
 
 ### References
 - **Source Code**: [https://github.com/ersilia-os/ai2050-mtb-penetration](https://github.com/ersilia-os/ai2050-mtb-penetration)
