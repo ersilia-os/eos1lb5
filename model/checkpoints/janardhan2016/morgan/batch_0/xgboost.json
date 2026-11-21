@@ -16,7 +16,7 @@
     "max_bin": 256,
     "n_estimators": 2000,
     "early_stopping_rounds": 50,
-    "nthread": 16,
+    "nthread": 28,
     "objective": "binary:logistic",
     "scale_pos_weight": 0.2,
     "eval_metric": "auc"
@@ -38,18 +38,18 @@
   "portfolio_scores": {
     "flaml": NaN,
     "autogluon": NaN,
-    "heuristic": 0.9891304347826088,
+    "heuristic": 0.9917184265010351,
     "default": 0.9951690821256038
   },
   "decision_cutoff_raw": 0.7708466649055481,
   "decision_cutoff_raw_source": "oof_balanced_accuracy",
-  "decision_cutoff_proba": 0.9131557501465707,
+  "decision_cutoff_proba": 0.9131557500586712,
   "decision_cutoff_rank": 0.21666666666666667,
-  "decision_cutoff_logit": 2.352790174957971,
+  "decision_cutoff_logit": 2.352790173849561,
   "calibrator": {
     "method": "platt",
-    "coef": 5.406247438340577,
-    "intercept": -1.814597632541025
+    "coef": 5.406247442327667,
+    "intercept": -1.8145976367228698
   },
   "ranker": {
     "knots": [
@@ -107,7 +107,7 @@
       0.36256974935531616,
       0.38902339339256287,
       0.40331190824508667,
-      0.4060952067375183,
+      0.4060952365398407,
       0.4138961136341095,
       0.426673948764801,
       0.46231403946876526,
