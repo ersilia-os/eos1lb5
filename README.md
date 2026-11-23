@@ -3,7 +3,7 @@
 Scores how far a compound travels along the route to Mycobacterium tuberculosis in necrotic lung lesions. Ersilia built six LazyQSAR classifiers from published data on entry into lung epithelial lining fluid (70 drugs), diffusion into caseum (280 compounds) and cell wall permeation from inferred activity data, the 5,371-compound MtbPen set and a click-chemistry screen in M. tuberculosis and M. smegmatis. Five-fold out-of-fold AUROC is 0.82, 0.91, 0.995, 0.88, 0.91 and 0.92, in that order. Each uses its own authors cut-off, so the scores share no common scale.
 
 This model was incorporated on 2025-11-25.
-Last packaged on 2026-11-05.
+Last packaged on 2026-11-23.
 
 ## Information
 ### Identifiers
@@ -41,19 +41,19 @@ Below are the **Output Columns** of the model:
 - **Source:** `Local`
 - **Source Type:** `Internal`
 - **DockerHub**: [https://hub.docker.com/r/ersiliaos/eos1lb5](https://hub.docker.com/r/ersiliaos/eos1lb5)
-- **Docker Architecture:** `AMD64`
+- **Docker Architecture:** `AMD64`, `ARM64`
 - **S3 Storage**: [https://ersilia-models-zipped.s3.eu-central-1.amazonaws.com/eos1lb5.zip](https://ersilia-models-zipped.s3.eu-central-1.amazonaws.com/eos1lb5.zip)
 - **Apptainer**: [https://models-sif.s3.eu-north-1.amazonaws.com/eos1lb5_v3.sif](https://models-sif.s3.eu-north-1.amazonaws.com/eos1lb5_v3.sif)
 
 ### Resource Consumption
 - **Model Size (Mb):** `98`
 - **Environment Size (Mb):** `6954`
-- **Image Size (Mb):** `3837.8`
+- **Image Size (Mb):** `3555.82`
 
 **Computational Performance (seconds):**
-- 10 inputs: `47.63`
-- 100 inputs: `1297.5`
-- 10000 inputs: `-1`
+- 10 inputs: `37.72`
+- 100 inputs: `42.58`
+- 10000 inputs: `769.29`
 
 ### References
 - **Source Code**: [https://github.com/ersilia-os/ai2050-mtb-penetration](https://github.com/ersilia-os/ai2050-mtb-penetration)
