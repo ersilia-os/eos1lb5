@@ -2,13 +2,13 @@ Identifier: eos1lb5
 Slug: mycobacterium-permeability
 Status: Ready
 Title: Mycobacterium cell wall penetration
-Description: Scores how far a compound travels along the route to Mycobacterium
-  tuberculosis in necrotic lung lesions. Ersilia built six LazyQSAR classifiers
-  from published data on entry into lung epithelial lining fluid (70 drugs),
-  diffusion into caseum (280 compounds) and cell wall permeation from inferred
-  activity data, the 5,371-compound MtbPen set and a click-chemistry screen in
-  M. tuberculosis and M. smegmatis. Five-fold out-of-fold AUROC is 0.82, 0.91,
-  0.995, 0.88, 0.91 and 0.92, in that order. Each uses its own authors' cut-off,
+Description: Scores how far a compound travels along the route to Mycobacterium 
+  tuberculosis in necrotic lung lesions. Ersilia built six LazyQSAR classifiers 
+  from published data on entry into lung epithelial lining fluid (70 drugs), 
+  diffusion into caseum (280 compounds) and cell wall permeation from inferred 
+  activity data, the 5,371-compound MtbPen set and a click-chemistry screen in 
+  M. tuberculosis and M. smegmatis. Five-fold out-of-fold AUROC is 0.82, 0.91, 
+  0.995, 0.88, 0.91 and 0.92, in that order. Each uses its own authors cut-off, 
   so the scores share no common scale.
 Deployment:
   - Local
