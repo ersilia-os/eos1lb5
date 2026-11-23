@@ -1,6 +1,6 @@
 # Mycobacterium cell wall penetration
 
-Scores how far a compound travels along the route to Mycobacterium tuberculosis in necrotic lung lesions. Ersilia built six LazyQSAR classifiers from published data on entry into lung epithelial lining fluid (70 drugs), diffusion into caseum (280 compounds) and cell wall permeation from inferred activity data, the 5,371-compound MtbPen set and a click-chemistry screen in M. tuberculosis and M. smegmatis. Five-fold out-of-fold AUROC is 0.82, 0.91, 0.995, 0.88, 0.91 and 0.92, in that order. Each uses its own authors' cut-off, so the scores share no common scale.
+Scores how far a compound travels along the route to Mycobacterium tuberculosis in necrotic lung lesions. Ersilia built six LazyQSAR classifiers from published data on entry into lung epithelial lining fluid (70 drugs), diffusion into caseum (280 compounds) and cell wall permeation from inferred activity data, the 5,371-compound MtbPen set and a click-chemistry screen in M. tuberculosis and M. smegmatis. Five-fold out-of-fold AUROC is 0.82, 0.91, 0.995, 0.88, 0.91 and 0.92, in that order. Each uses its own authors cut-off, so the scores share no common scale.
 
 This model was incorporated on 2025-11-25.
 Last packaged on 2026-11-05.
@@ -46,8 +46,8 @@ Below are the **Output Columns** of the model:
 - **Apptainer**: [https://models-sif.s3.eu-north-1.amazonaws.com/eos1lb5_v3.sif](https://models-sif.s3.eu-north-1.amazonaws.com/eos1lb5_v3.sif)
 
 ### Resource Consumption
-- **Model Size (Mb):** `80`
-- **Environment Size (Mb):** `7467`
+- **Model Size (Mb):** `98`
+- **Environment Size (Mb):** `6954`
 - **Image Size (Mb):** `3837.8`
 
 **Computational Performance (seconds):**
